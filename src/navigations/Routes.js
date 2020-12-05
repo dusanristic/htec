@@ -1,6 +1,6 @@
 export default {
   HeadlinesTabBar: 'HeadlinesTabBar',
-  Headlines: 'Headlines',
+  TopHeadlines: 'TopHeadlines',
   HeadlineContent: 'HeadlineContent',
   HeadlineCategories: 'HeadlineCategories',
 };

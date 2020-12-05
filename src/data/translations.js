@@ -1,10 +1,10 @@
 export default {
   en: {
-    headlines: 'Top Headlines',
+    topHeadlines: 'Top Headlines',
     headlineCategories: 'Categories',
   },
   hr: {
-    headlines: 'Vesti',
+    topHeadlines: 'Vesti',
     headlineCategories: 'Kategorije',
   },
 };

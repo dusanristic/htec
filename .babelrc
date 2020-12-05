@@ -13,7 +13,8 @@
           "_navigations": "./src/navigations",
           "_redux": "./src/redux",
           "_screens": "./src/screens",
-          "_services": "./src/services"
+          "_services": "./src/services",
+          "_styles": "./src/styles"
         }
       }
     ]

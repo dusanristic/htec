@@ -28,7 +28,8 @@
     "object-curly-newline": "off",
     "jsx-closing-bracket-location": 0,
     "no-named-as-default": 0,
-    "react-native/no-inline-styles": "off"
+    "react-native/no-inline-styles": 1,
+    "react/prop-types": 0
   },
   "settings": {
     "import/resolver": {

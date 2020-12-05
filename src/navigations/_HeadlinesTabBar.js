@@ -11,10 +11,10 @@ function AppNavigatorTabBar() {
   return (
     <Tab.Navigator>
       <Tab.Screen
-        name={Routes.Headlines}
-        component={AppScreens.Headlines}
+        name={Routes.TopHeadlines}
+        component={AppScreens.TopHeadlines}
         options={{
-          title: i18n.translate('headlines'),
+          title: i18n.translate('topHeadlines'),
         }}
       />
       <Tab.Screen

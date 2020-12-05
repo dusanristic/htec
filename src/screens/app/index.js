@@ -1,9 +1,9 @@
 import HeadlineCategoriesScreen from './HeadlineCategoriesScreen';
 import HeadlineContentScreen from './HeadlineContentScreen';
-import HeadlinesScreen from './HeadlinesScreen';
+import TopHeadlinesScreen from './TopHeadlinesScreen';
 
 export {
   HeadlineCategoriesScreen as HeadlineCategories,
   HeadlineContentScreen as HeadlineContent,
-  HeadlinesScreen as Headlines,
+  TopHeadlinesScreen as TopHeadlines,
 };
