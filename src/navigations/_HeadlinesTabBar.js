@@ -1,6 +1,8 @@
 import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { AppScreens } from '_screens';
+import i18n from 'i18n-js';
+
 import Routes from './Routes';
 
 const Tab = createBottomTabNavigator();
@@ -12,14 +14,14 @@ function AppNavigatorTabBar() {
         name={Routes.Headlines}
         component={AppScreens.Headlines}
         options={{
-          title: 'Top Headlines',
+          title: i18n.translate('headlines'),
         }}
       />
       <Tab.Screen
         name={Routes.HeadlineCategories}
         component={AppScreens.HeadlineCategories}
         options={{
-          title: 'Categories',
+          title: i18n.translate('headlineCategories'),
         }}
       />
     </Tab.Navigator>

@@ -26,9 +26,9 @@
     "import/prefer-default-export": "off",
 
     "object-curly-newline": "off",
-    "jsx-closing-bracket-location": ["disabled"],
+    "jsx-closing-bracket-location": 0,
     "no-named-as-default": 0,
-    "react-native/no-inline-styles": 1
+    "react-native/no-inline-styles": "off"
   },
   "settings": {
     "import/resolver": {

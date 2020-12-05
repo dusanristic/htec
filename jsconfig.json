@@ -6,6 +6,7 @@
     "paths": {
       "_assets": ["src/assets/*"],
       "_components": ["src/components/*"],
+      "_data": ["src/data/*"],
       "_navigations": ["src/navigations/*"],
       "_redux": ["src/redux/*"],
       "_screens": ["src/screens/*"],
