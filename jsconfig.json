@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "target": "es6",
+    "baseUrl": ".",
+    "paths": {
+      "_assets": ["src/assets/*"],
+      "_components": ["src/components/*"],
+      "_navigations": ["src/navigations/*"],
+      "_redux": ["src/redux/*"],
+      "_screens": ["src/screens/*"],
+      "_services": ["src/services/*"]
+    }
+  }
+}
