@@ -12,7 +12,11 @@ const Stack = createStackNavigator();
 function AppNavigator() {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName={Routes.HeadlinesTabBar} mode="modal">
+      <Stack.Navigator
+        initialRouteName={Routes.HeadlinesTabBar}
+        screenOptions={{
+          headerShown: false
+        }}>
         <Stack.Screen name={Routes.HeadlinesTabBar} component={HeadlinesTabBar} />
         <Stack.Screen name={Routes.HeadlineContent} component={AppScreens.HeadlineContent} />
       </Stack.Navigator>

@@ -3,14 +3,16 @@ import { View, FlatList, StyleSheet } from 'react-native';
 import { viewStyles } from '_styles';
 import TopHeadlinesCell from './TopHeadlinesCell';
 
-const TopHeadlinesList = ({ data }) => (
+const TopHeadlinesList = ({ data, onPress }) => (
   <FlatList
     style={styles.listContainer}
     data={data}
     showsVerticalScrollIndicator={false}
     keyExtractor={(_, index) => index.toString()}
     ItemSeparatorComponent={() => <View style={styles.separator} />}
-    renderItem={({ item }) => <TopHeadlinesCell item={item} onPress={() => {}} />}
+    renderItem={({ item, index }) => (
+      <TopHeadlinesCell item={item} onPress={() => onPress(index)} />
+    )}
   />
 );
 

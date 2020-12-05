@@ -1,5 +1,5 @@
 const mapToHeadlineItem = (item) => ({
-  source: { id: item.id, name: item.name },
+  source: { id: item.source.id, name: item.source.name },
   author: item.author,
   title: item.title,
   description: item.description,

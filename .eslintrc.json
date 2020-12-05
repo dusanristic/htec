@@ -24,10 +24,11 @@
     "no-use-before-define": ["error", { "functions": true, "classes": true, "variables": false }],
     "quotes": [2, "single", "avoid-escape"],
     "import/prefer-default-export": "off",
-
     "object-curly-newline": "off",
     "no-param-reassign": "off",
-    "jsx-closing-bracket-location": 0,
+    "implicit-arrow-linebreak": "off",
+    "react/jsx-closing-bracket-location": 0,
+    "react/jsx-curly-newline": "off",
     "no-named-as-default": 0,
     "react-native/no-inline-styles": 1,
     "react/prop-types": 0,

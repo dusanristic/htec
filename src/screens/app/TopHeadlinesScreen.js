@@ -1,18 +1,26 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
-import { View } from 'react-native';
+import { SafeAreaView, View } from 'react-native';
 import { Lists } from '_components';
 import { topHeadlinesActions } from '_redux/actions';
+import Routes from '_navigations/Routes';
 
-const TopHeadlinesScreen = ({ headlines, getHeadlines }) => {
+const TopHeadlinesScreen = ({ navigation, headlines, getHeadlines }) => {
   useEffect(() => {
     getHeadlines();
   }, []);
 
   return (
-    <View style={{ flex: 1 }}>
-      <Lists.TopHeadlines data={headlines} />
-    </View>
+    <SafeAreaView style={{ flex: 1 }}>
+      <Lists.TopHeadlines
+        data={headlines}
+        onPress={(index) =>
+          navigation.navigate(Routes.HeadlineContent, {
+            item: headlines[index]
+          })
+        }
+      />
+    </SafeAreaView>
   );
 };
 
