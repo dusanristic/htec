@@ -26,6 +26,7 @@
     "import/prefer-default-export": "off",
 
     "object-curly-newline": "off",
+    "jsx-closing-bracket-location": ["disabled"],
     "no-named-as-default": 0,
     "react-native/no-inline-styles": 1
   },
