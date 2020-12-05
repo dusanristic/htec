@@ -14,14 +14,14 @@ function AppNavigatorTabBar() {
         name={Routes.TopHeadlines}
         component={AppScreens.TopHeadlines}
         options={{
-          title: i18n.translate('topHeadlines'),
+          title: i18n.translate('topHeadlines')
         }}
       />
       <Tab.Screen
         name={Routes.HeadlineCategories}
         component={AppScreens.HeadlineCategories}
         options={{
-          title: i18n.translate('headlineCategories'),
+          title: i18n.translate('headlineCategories')
         }}
       />
     </Tab.Navigator>

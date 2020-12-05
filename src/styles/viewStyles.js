@@ -5,13 +5,13 @@ const viewStyles = {
     flex: 1,
     marginVertical: 16,
     height: 2,
-    backgroundColor: Colors.GRAY,
+    backgroundColor: Colors.GRAY
   },
 
   cellImage: {
     height: 150,
-    marginBottom: 16,
-  },
+    marginBottom: 16
+  }
 };
 
 export default viewStyles;
