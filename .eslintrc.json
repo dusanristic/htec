@@ -26,10 +26,12 @@
     "import/prefer-default-export": "off",
 
     "object-curly-newline": "off",
+    "no-param-reassign": "off",
     "jsx-closing-bracket-location": 0,
     "no-named-as-default": 0,
     "react-native/no-inline-styles": 1,
-    "react/prop-types": 0
+    "react/prop-types": 0,
+    "comma-dangle": ["error", "never"]
   },
   "settings": {
     "import/resolver": {

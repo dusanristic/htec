@@ -1,13 +1,12 @@
 import React from 'react';
 import { View, FlatList, StyleSheet } from 'react-native';
-import { MockedData } from '_data';
 import { viewStyles } from '_styles';
 import TopHeadlinesCell from './TopHeadlinesCell';
 
-const TopHeadlinesList = () => (
+const TopHeadlinesList = ({ data }) => (
   <FlatList
     style={styles.listContainer}
-    data={MockedData.TopHeadlines}
+    data={data}
     showsVerticalScrollIndicator={false}
     keyExtractor={(_, index) => index.toString()}
     ItemSeparatorComponent={() => <View style={styles.separator} />}
@@ -17,7 +16,7 @@ const TopHeadlinesList = () => (
 
 const styles = StyleSheet.create({
   listContainer: { marginHorizontal: 32 },
-  separator: viewStyles.listSeparator,
+  separator: viewStyles.listSeparator
 });
 
 export default TopHeadlinesList;
