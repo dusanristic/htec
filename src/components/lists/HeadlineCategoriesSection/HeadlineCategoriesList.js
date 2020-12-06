@@ -4,7 +4,7 @@ import { animations, viewStyles } from '_styles';
 import { HeadlineCategoriesFooter } from '_components/footers';
 import HeadlineCategoryCell from './HeadlineCategoriesCell';
 
-const HeadlinesCategoryList = ({ data, onPress, shouldExpand }) => {
+const HeadlinesCategoryList = ({ data, onPress, isExpanded }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const listRef = useRef();
@@ -14,10 +14,10 @@ const HeadlinesCategoryList = ({ data, onPress, shouldExpand }) => {
      * Default value of shouldExpand prop is undefined.
      * Do not expand the list on first render.
      */
-    if (shouldExpand !== undefined) {
+    if (isExpanded !== undefined) {
       LayoutAnimation.configureNext(animations.changeHeight);
     }
-  }, [shouldExpand]);
+  }, [isExpanded]);
 
   const changeArticle = ({ showNext }) => {
     const increment = showNext ? 1 : -1;
@@ -25,8 +25,8 @@ const HeadlinesCategoryList = ({ data, onPress, shouldExpand }) => {
     setCurrentIndex(currentIndex + increment);
   };
 
-  return (
-    <View style={shouldExpand ? styles.expandedList : styles.collapsedList}>
+  return isExpanded ? (
+    <View>
       <FlatList
         horizontal
         pagingEnabled
@@ -50,14 +50,12 @@ const HeadlinesCategoryList = ({ data, onPress, shouldExpand }) => {
         onPrevious={() => changeArticle({ showNext: false })}
       />
     </View>
-  );
+  ) : null;
 };
 
 const styles = StyleSheet.create({
   container: { flexGrow: 1 },
   contentContainer: { justifyContent: 'flex-end', flex: 1 },
-  expandedList: { height: 'auto' },
-  collapsedList: { height: 0 },
   separator: viewStyles.categoriesSeparator
 });
 
