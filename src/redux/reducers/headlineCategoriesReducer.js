@@ -2,6 +2,7 @@ import { actions } from '_redux/actions';
 import { Mappers } from '_services';
 import initialState from './initialState';
 
+// TODO: Implement Redux selector
 export default function HeadlineCategoriesReducer(state = initialState.headlineCategories, action) {
   switch (action.type) {
     case actions.GET_BUSINESS_HEADLINES:

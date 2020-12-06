@@ -5,7 +5,6 @@ import { HeadlineCategoriesFooter } from '_components/footers';
 import HeadlineCategoryCell from './HeadlineCategoriesCell';
 
 const HeadlinesCategoryList = ({ data, onPress, shouldExpand }) => {
-  const [isExpanded, setIsExpanded] = useState(shouldExpand);
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const listRef = useRef();
@@ -13,11 +12,10 @@ const HeadlinesCategoryList = ({ data, onPress, shouldExpand }) => {
   useEffect(() => {
     /*
      * Default value of shouldExpand prop is undefined.
-     * Do not change isExpanded state value on first render.
+     * Do not expand the list on first render.
      */
     if (shouldExpand !== undefined) {
       LayoutAnimation.configureNext(animations.changeHeight);
-      setIsExpanded(!isExpanded);
     }
   }, [shouldExpand]);
 
@@ -28,7 +26,7 @@ const HeadlinesCategoryList = ({ data, onPress, shouldExpand }) => {
   };
 
   return (
-    <View style={isExpanded ? styles.expandedList : styles.collapsedList}>
+    <View style={shouldExpand ? styles.expandedList : styles.collapsedList}>
       <FlatList
         horizontal
         pagingEnabled

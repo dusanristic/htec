@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { View, SafeAreaView } from 'react-native';
+import { SafeAreaView } from 'react-native';
 import { Lists, Core } from '_components';
 import Routes from '_navigations/Routes';
 import { headlineCategoriesActions } from '_redux/actions';

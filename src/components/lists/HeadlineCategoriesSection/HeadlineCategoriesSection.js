@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { SectionList } from 'react-native';
 import { HeadlineCategoriesHeader } from '_components/headers';
 import HeadlineCategoryList from './HeadlineCategoriesList';
@@ -9,11 +9,6 @@ const HeadlineCategoriesSection = ({ data, onPress, onSectionPress }) => {
    * Its default value is undefined, so that all section lists are collapsed.
    */
   const [shouldExpand, setShouldExpand] = useState(new Array(data.length));
-
-  useEffect(() => {
-    console.log('BBBB');
-    console.log(shouldExpand);
-  }, [data]);
 
   const renderItem = ({ item, section }) => (
     <HeadlineCategoryList
@@ -37,8 +32,11 @@ const HeadlineCategoriesSection = ({ data, onPress, onSectionPress }) => {
          */
         const clonedShouldExpand = [...shouldExpand];
         clonedShouldExpand[header.id] = !shouldExpand[header.id];
+        // Do not fetch data when on section collapse
+        if (!shouldExpand[header.id]) {
+          onSectionPress(header);
+        }
         setShouldExpand(clonedShouldExpand);
-        onSectionPress(header);
       }}
     />
   );
@@ -49,7 +47,7 @@ const HeadlineCategoriesSection = ({ data, onPress, onSectionPress }) => {
       showsVerticalScrollIndicator={false}
       sections={data}
       keyExtractor={(item, index) => item + index}
-      extraData={shouldExpand}
+      // extraData={shouldExpand}
       renderItem={renderItem}
       renderSectionHeader={renderSectionHeader}
     />
