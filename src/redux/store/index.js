@@ -18,13 +18,13 @@ const persistConfig = {
   key: 'root',
   storage: AsyncStorage,
   stateReconciler: autoMergeLevel2,
-  whitelist: ['TopHeadlines']
+  whitelist: ['TopHeadlines', 'HeadlineCategories']
 };
 
 const middlewareConfig = {
   interceptors: {
     request: [
-      (getState, config) => {
+      (_, config) => {
         config.headers.Authorization = `Bearer ${API_KEY}`;
         return config;
       }
@@ -43,6 +43,6 @@ const store = createStore(
 const persistor = persistStore(store);
 
 // Use this to reset ReduxPersist store
-// persistor.purge();
+persistor.purge();
 
 export { store, persistor };

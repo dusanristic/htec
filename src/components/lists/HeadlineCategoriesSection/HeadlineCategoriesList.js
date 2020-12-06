@@ -30,15 +30,15 @@ const HeadlinesCategoryList = ({ data, onPress, shouldExpand }) => {
   return (
     <View style={isExpanded ? styles.expandedList : styles.collapsedList}>
       <FlatList
+        horizontal
+        pagingEnabled
         scrollEnabled={false}
+        bounces={false}
+        pinchGestureEnabled={false}
+        showsHorizontalScrollIndicator={false}
         ref={listRef}
         contentContainerStyle={styles.container}
         style={styles.separator}
-        horizontal
-        pagingEnabled
-        pinchGestureEnabled={false}
-        bounces={false}
-        showsHorizontalScrollIndicator={false}
         data={data}
         keyExtractor={(_, index) => index.toString()}
         renderItem={({ item, index }) => (
@@ -46,8 +46,8 @@ const HeadlinesCategoryList = ({ data, onPress, shouldExpand }) => {
         )}
       />
       <HeadlineCategoriesFooter
-        showFirst={currentIndex !== 0}
-        showSecond={currentIndex !== data.length - 1}
+        showPrevInd={currentIndex !== 0}
+        showNextInd={data?.length !== 0 && currentIndex !== data.length - 1}
         onNext={() => changeArticle({ showNext: true })}
         onPrevious={() => changeArticle({ showNext: false })}
       />

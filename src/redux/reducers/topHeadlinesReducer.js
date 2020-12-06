@@ -2,7 +2,7 @@ import { actions } from '_redux/actions';
 import { Mappers } from '_services';
 import initialState from './initialState';
 
-export default function MeasurementsReducer(state = initialState.TopHeadlines, action) {
+export default function TopHeadlinesReducer(state = initialState.TopHeadlines, action) {
   switch (action.type) {
     case actions.GET_TOP_HEADLINES:
       return [];

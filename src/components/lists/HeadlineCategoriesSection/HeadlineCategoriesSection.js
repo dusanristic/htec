@@ -3,7 +3,7 @@ import { SectionList } from 'react-native';
 import { HeadlineCategoriesHeader } from '_components/headers';
 import HeadlineCategoryList from './HeadlineCategoriesList';
 
-const HeadlineCategoriesSection = ({ data, onPress }) => {
+const HeadlineCategoriesSection = ({ data, onPress, onSectionPress }) => {
   /*
    * Array through which this component has awareness which section lists are expanded or collapse.
    * Its default value is undefined, so that all section lists are collapsed.
@@ -33,6 +33,7 @@ const HeadlineCategoriesSection = ({ data, onPress }) => {
         const clonedShouldExpand = [...shouldExpand];
         clonedShouldExpand[header.id] = !shouldExpand[header.id];
         setShouldExpand(clonedShouldExpand);
+        onSectionPress(header);
       }}
     />
   );
