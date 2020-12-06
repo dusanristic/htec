@@ -1,4 +1,7 @@
+import { Dimensions } from 'react-native';
 import * as Colors from './colors';
+
+const windowWidth = Dimensions.get('window').width;
 
 const viewStyles = {
   rowSpaceBetweenContainer: {
@@ -37,6 +40,18 @@ const viewStyles = {
     marginHorizontal: 32,
     alignItems: 'flex-end',
     marginBottom: 32
+  },
+
+  categoriesHeader: {
+    backgroundColor: Colors.GRAY,
+    justifyContent: 'center',
+    paddingVertical: 16,
+    paddingHorizontal: 16
+  },
+
+  categoryCellImage: {
+    height: 150,
+    width: windowWidth
   }
 };
 

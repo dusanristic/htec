@@ -16,7 +16,7 @@ const TopHeadlinesCell = ({ item, onPress }) => (
 TopHeadlinesCell.propTypes = {
   item: PropTypes.shape({
     title: PropTypes.string,
-    urlToImage: PropTypes.string,
+    imageUrl: PropTypes.string,
     description: PropTypes.string
   }).isRequired
 };

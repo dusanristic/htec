@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
-import { SafeAreaView, View } from 'react-native';
+import { SafeAreaView } from 'react-native';
 import { Lists } from '_components';
 import { topHeadlinesActions } from '_redux/actions';
 import Routes from '_navigations/Routes';

@@ -1,3 +1,4 @@
-import TopHeadlinesMockData from './topHeadlinesMockData';
+import topHeadlinesMockData from './topHeadlinesMockData';
+import headlineCategoriesMockData from './headlineCategoriesMockData';
 
-export { TopHeadlinesMockData as TopHeadlines };
+export { topHeadlinesMockData as topHeadlines, headlineCategoriesMockData as headlineCategories };

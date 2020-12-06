@@ -42,6 +42,25 @@ const textStyles = {
     marginRight: 16,
     fontSize: Font.FONT_SIZE_12,
     fontWeight: Font.FONT_WEIGHT_600
+  },
+
+  categoriesHeader: {
+    fontSize: Font.FONT_SIZE_28,
+    fontWeight: Font.FONT_WEIGHT_600
+  },
+
+  categoryCellTitle: {
+    fontWeight: Font.FONT_WEIGHT_600,
+    fontSize: Font.FONT_SIZE_20,
+    paddingHorizontal: 8,
+    textAlign: 'center',
+    marginBottom: 24
+    // marginHorizontal: 32
+  },
+
+  categoryCellDescription: {
+    fontSize: Font.FONT_SIZE_14,
+    paddingHorizontal: 16
   }
 };
 
