@@ -6,6 +6,8 @@ import autoMergeLevel2 from 'redux-persist/lib/stateReconciler/autoMergeLevel2';
 import initialState from '_redux/reducers/initialState';
 import axios from 'axios';
 import axiosMiddleware from 'redux-axios-middleware';
+// eslint-disable-next-line import/no-unresolved
+import { API_KEY } from '@env';
 
 const client = axios.create({
   baseURL: 'https://newsapi.org/v2',
@@ -15,15 +17,15 @@ const client = axios.create({
 const persistConfig = {
   key: 'root',
   storage: AsyncStorage,
-  stateReconciler: autoMergeLevel2
-  //   whitelist: ['TopHeadlines']
+  stateReconciler: autoMergeLevel2,
+  whitelist: ['TopHeadlines']
 };
 
 const middlewareConfig = {
   interceptors: {
     request: [
       (getState, config) => {
-        config.headers.Authorization = 'Bearer 1fbe9d7145da4081bd77da88ca46178e';
+        config.headers.Authorization = `Bearer ${API_KEY}`;
         return config;
       }
     ]
