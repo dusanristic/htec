@@ -1,8 +1,8 @@
 import React from 'react';
 import { FlatList } from 'react-native';
-import HeadlineCategoryCell from './HeadlineCategoryCell';
+import HeadlineCategoryCell from './HeadlineCategoriesCell';
 
-const HeadlineCategoryList = ({ data }) => (
+const HeadlinesCategoryList = ({ data }) => (
   <FlatList
     contentContainerStyle={{ flexGrow: 1 }}
     horizontal
@@ -16,4 +16,4 @@ const HeadlineCategoryList = ({ data }) => (
     )}
   />
 );
-export default HeadlineCategoryList;
+export default HeadlinesCategoryList;

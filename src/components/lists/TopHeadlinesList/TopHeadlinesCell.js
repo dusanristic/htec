@@ -7,9 +7,7 @@ const TopHeadlinesCell = ({ item, onPress }) => (
   <TouchableOpacity activeOpacity={constants.activeOpacity} onPress={onPress}>
     <Text style={styles.title}>{item.title}</Text>
     <Image source={{ uri: item.imageUrl }} style={styles.image} resizeMode="cover" />
-    <Text numberOfLines={constants.linesOfDescription} style={styles.cellDescription}>
-      {item.description}
-    </Text>
+    <Text style={styles.description}>{item.description}</Text>
   </TouchableOpacity>
 );
 
@@ -22,9 +20,9 @@ TopHeadlinesCell.propTypes = {
 };
 
 const styles = StyleSheet.create({
-  title: textStyles.cellTitle,
-  description: textStyles.cellDescription,
-  image: viewStyles.cellImage
+  title: textStyles.topHeadlinesCellTitle,
+  description: textStyles.topHeadlinesCellDescription,
+  image: viewStyles.topHeadlinesCellImage
 });
 
 export default TopHeadlinesCell;

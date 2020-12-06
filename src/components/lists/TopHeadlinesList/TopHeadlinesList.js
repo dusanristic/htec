@@ -18,7 +18,7 @@ const TopHeadlinesList = ({ data, onPress }) => (
 
 const styles = StyleSheet.create({
   listContainer: { marginHorizontal: 32 },
-  separator: viewStyles.listSeparator
+  separator: viewStyles.topHeadlineslistSeparator
 });
 
 export default TopHeadlinesList;

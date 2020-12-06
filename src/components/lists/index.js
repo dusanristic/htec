@@ -1,4 +1,4 @@
 import TopHeadlinesList from './TopHeadlinesList';
-import HeadlineCategoriesList from './HeadlineCategoriesList';
+import HeadlineCategoriesSection from './HeadlineCategoriesSection';
 
-export { TopHeadlinesList as TopHeadlines, HeadlineCategoriesList as HeadlineCategories };
+export { TopHeadlinesList as TopHeadlines, HeadlineCategoriesSection as HeadlineCategories };

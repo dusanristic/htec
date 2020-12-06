@@ -9,15 +9,14 @@ const textStyles = {
     fontSize: Font.FONT_SIZE_14
   },
 
-  cellTitle: {
+  topHeadlinesCellTitle: {
     fontWeight: Font.FONT_WEIGHT_600,
     fontSize: Font.FONT_SIZE_20,
     marginBottom: 24
   },
 
-  cellDescription: {
-    fontWeight: Font.FONT_WEIGHT_600,
-    fontSize: Font.FONT_SIZE_20
+  topHeadlinesCellDescription: {
+    fontSize: Font.FONT_SIZE_14
   },
 
   contentTitle: {
@@ -55,7 +54,6 @@ const textStyles = {
     paddingHorizontal: 8,
     textAlign: 'center',
     marginBottom: 24
-    // marginHorizontal: 32
   },
 
   categoryCellDescription: {

@@ -2,9 +2,9 @@ import React from 'react';
 import { SectionList } from 'react-native';
 import { MockedData } from '_data';
 import { HeadlineCategories } from '_components/headers';
-import HeadlineCategoryList from './HeadlineCategoryList';
+import HeadlineCategoryList from './HeadlineCategoriesList';
 
-const HeadlineCategoriesList = () => (
+const HeadlineCategoriesSection = () => (
   <SectionList
     stickySectionHeadersEnabled={false}
     showsVerticalScrollIndicator={false}
@@ -17,4 +17,4 @@ const HeadlineCategoriesList = () => (
   />
 );
 
-export default HeadlineCategoriesList;
+export default HeadlineCategoriesSection;
