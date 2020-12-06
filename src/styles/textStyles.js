@@ -4,6 +4,17 @@ import * as Font from './fonts';
 const textStyles = {
   font: Font.FONT_FAMILY,
 
+  errorTitle: {
+    color: Colors.WHITE,
+    fontSize: Font.FONT_SIZE_16,
+    fontWeight: Font.FONT_WEIGHT_600
+  },
+
+  errorInfo: {
+    color: Colors.WHITE,
+    fontSize: Font.FONT_SIZE_14
+  },
+
   goToLink: {
     color: Colors.BLUE,
     fontSize: Font.FONT_SIZE_14

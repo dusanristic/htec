@@ -1,11 +1,16 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
-import { SafeAreaView } from 'react-native';
-import { Lists } from '_components';
+import { View, SafeAreaView } from 'react-native';
+import { Lists, Core } from '_components';
 import Routes from '_navigations/Routes';
 import { headlineCategoriesActions } from '_redux/actions';
 
-function HeadlineCategoriesScreen({ navigation, headlinesByCategory, getHeadlinesByCategory }) {
+function HeadlineCategoriesScreen({
+  navigation,
+  headlinesByCategory,
+  getHeadlinesByCategory,
+  error
+}) {
   const navigateToContentScreen = (sectionIndex, itemIndex) => {
     const item = headlinesByCategory[sectionIndex].data[0][itemIndex];
     navigation.navigate(Routes.HeadlineContent, {
@@ -18,13 +23,18 @@ function HeadlineCategoriesScreen({ navigation, headlinesByCategory, getHeadline
       <Lists.HeadlineCategories
         data={headlinesByCategory}
         onPress={navigateToContentScreen}
-        onSectionPress={(header) => console.log(header)}
+        onSectionPress={(header) => getHeadlinesByCategory(header.title)}
       />
+
+      {error && <Core.ErrorView />}
     </SafeAreaView>
   );
 }
 
-const mapStateToProps = (state) => ({ headlinesByCategory: state.HeadlineCategories });
+const mapStateToProps = (state) => ({
+  headlinesByCategory: state.headlineCategories.data,
+  error: state.headlineCategories.error
+});
 
 const mapDispatchToProps = {
   getHeadlinesByCategory: headlineCategoriesActions.load

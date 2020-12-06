@@ -1,6 +1,11 @@
 import * as Colors from './colors';
 
 const viewStyles = {
+  error: {
+    backgroundColor: Colors.RED,
+    padding: 8
+  },
+
   rowSpaceBetweenContainer: {
     flexDirection: 'row',
     justifyContent: 'space-between'

@@ -1,11 +1,11 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { SafeAreaView } from 'react-native';
-import { Lists } from '_components';
+import { Lists, Core } from '_components';
 import { topHeadlinesActions } from '_redux/actions';
 import Routes from '_navigations/Routes';
 
-const TopHeadlinesScreen = ({ navigation, headlines, getHeadlines }) => {
+const TopHeadlinesScreen = ({ navigation, headlines, error, getHeadlines }) => {
   useEffect(() => {
     getHeadlines();
   }, []);
@@ -19,11 +19,15 @@ const TopHeadlinesScreen = ({ navigation, headlines, getHeadlines }) => {
   return (
     <SafeAreaView style={{ flex: 1 }}>
       <Lists.TopHeadlines data={headlines} onPress={navigateToContentScreen} />
+      {error && <Core.ErrorView />}
     </SafeAreaView>
   );
 };
 
-const mapStateToProps = (state) => ({ headlines: state.TopHeadlines.data });
+const mapStateToProps = (state) => ({
+  headlines: state.topHeadlines.data,
+  error: state.topHeadlines.error
+});
 
 const mapDispatchToProps = {
   getHeadlines: topHeadlinesActions.load

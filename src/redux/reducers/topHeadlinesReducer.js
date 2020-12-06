@@ -2,7 +2,7 @@ import { actions } from '_redux/actions';
 import { Mappers } from '_services';
 import initialState from './initialState';
 
-export default function TopHeadlinesReducer(state = initialState.TopHeadlines, action) {
+export default function TopHeadlinesReducer(state = initialState.topHeadlines, action) {
   switch (action.type) {
     case actions.GET_TOP_HEADLINES:
       return [];
@@ -13,11 +13,15 @@ export default function TopHeadlinesReducer(state = initialState.TopHeadlines, a
 
       return {
         data: articles,
-        totalResults: numberOfArticles
+        totalResults: numberOfArticles,
+        error: null
       };
     }
     case actions.GET_TOP_HEADLINES_FAIL:
-      return state;
+      return {
+        ...state,
+        error: action.error.message
+      };
 
     default:
       return state;

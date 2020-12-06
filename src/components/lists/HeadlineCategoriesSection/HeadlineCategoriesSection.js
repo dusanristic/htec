@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { SectionList } from 'react-native';
 import { HeadlineCategoriesHeader } from '_components/headers';
 import HeadlineCategoryList from './HeadlineCategoriesList';
@@ -9,6 +9,11 @@ const HeadlineCategoriesSection = ({ data, onPress, onSectionPress }) => {
    * Its default value is undefined, so that all section lists are collapsed.
    */
   const [shouldExpand, setShouldExpand] = useState(new Array(data.length));
+
+  useEffect(() => {
+    console.log('BBBB');
+    console.log(shouldExpand);
+  }, [data]);
 
   const renderItem = ({ item, section }) => (
     <HeadlineCategoryList

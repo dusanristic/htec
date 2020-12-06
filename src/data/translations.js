@@ -3,12 +3,14 @@ export default {
     topHeadlines: 'Top Headlines',
     headlineCategories: 'Categories',
     goToLink: 'Go to Link',
-    back: 'Back'
+    errorTitle: 'Something went wrong',
+    errorInfo: 'Data is not updated. Showing saved data, if exists.'
   },
   hr: {
     topHeadlines: 'Vesti',
     headlineCategories: 'Kategorije',
     goToLink: 'Otvori link',
-    back: 'Nazad'
+    errorTitle: 'Došlo je do greške',
+    errorInfo: 'Podaci nisu osveženi. Prikazani su sačuvani podaci, ako postoje.'
   }
 };
