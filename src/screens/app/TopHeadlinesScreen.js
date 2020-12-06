@@ -10,16 +10,15 @@ const TopHeadlinesScreen = ({ navigation, headlines, getHeadlines }) => {
     getHeadlines();
   }, []);
 
+  const navigateToContentScreen = (index) => {
+    navigation.navigate(Routes.HeadlineContent, {
+      item: headlines[index]
+    });
+  };
+
   return (
     <SafeAreaView style={{ flex: 1 }}>
-      <Lists.TopHeadlines
-        data={headlines}
-        onPress={(index) =>
-          navigation.navigate(Routes.HeadlineContent, {
-            item: headlines[index]
-          })
-        }
-      />
+      <Lists.TopHeadlines data={headlines} onPress={navigateToContentScreen} />
     </SafeAreaView>
   );
 };

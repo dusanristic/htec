@@ -6,6 +6,11 @@ const viewStyles = {
     justifyContent: 'space-between'
   },
 
+  clickableTextContainer: {
+    justifyContent: 'flex-start',
+    paddingHorizontal: 8
+  },
+
   topHeadlineslistSeparator: {
     flex: 1,
     marginVertical: 16,
@@ -49,6 +54,13 @@ const viewStyles = {
   categoryCellImage: {
     height: 150,
     width: '100%'
+  },
+
+  categoriesFooter: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    paddingHorizontal: 8,
+    marginVertical: 8
   }
 };
 

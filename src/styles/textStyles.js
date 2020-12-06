@@ -4,9 +4,14 @@ import * as Font from './fonts';
 const textStyles = {
   font: Font.FONT_FAMILY,
 
-  clickableText: {
+  goToLink: {
     color: Colors.BLUE,
     fontSize: Font.FONT_SIZE_14
+  },
+
+  clickableText: {
+    fontSize: Font.FONT_SIZE_32,
+    fontWeight: Font.FONT_WEIGHT_600
   },
 
   topHeadlinesCellTitle: {

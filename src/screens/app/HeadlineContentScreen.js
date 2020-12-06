@@ -30,7 +30,7 @@ const HeadlineContentScreen = ({ route }) => {
         </View>
 
         <View style={styles.linkContainer}>
-          <Core.ClickableText text={i18n.translate('goToLink')} onPress={openLink} />
+          <Core.OpenLinkButton text={i18n.translate('goToLink')} onPress={openLink} />
         </View>
       </ScrollView>
     </SafeAreaView>

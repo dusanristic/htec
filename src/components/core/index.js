@@ -1,3 +1,4 @@
+import OpenLinkButton from './OpenLinkButton';
 import ClickableText from './ClickableText';
 
-export { ClickableText };
+export { OpenLinkButton, ClickableText };

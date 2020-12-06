@@ -3,7 +3,7 @@ import { Provider } from 'react-redux';
 import { PersistGate } from 'redux-persist/integration/react';
 import { store, persistor } from '_redux/store/index';
 import { AppNavigator } from './navigations';
-import { useLocalization } from './services/Localization';
+import { useLocalization } from './services/localization';
 
 const App = () => {
   const { localizationLoaded } = useLocalization();

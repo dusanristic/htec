@@ -1,23 +1,16 @@
-import React, { useState } from 'react';
-import { TouchableWithoutFeedback, Text, StyleSheet } from 'react-native';
-import { textStyles } from '_styles';
+import React from 'react';
+import { TouchableOpacity, Text, StyleSheet } from 'react-native';
+import { viewStyles, textStyles, constants } from '_styles';
 
-const ClickableText = ({ text, onPress }) => {
-  const [isPressed, setIsPressed] = useState(false);
-
-  return (
-    <TouchableWithoutFeedback
-      onPressIn={() => setIsPressed(true)}
-      onPressOut={() => setIsPressed(false)}
-      onPress={onPress}>
-      <Text style={isPressed ? styles.clicked : styles.unclicked}>{text}</Text>
-    </TouchableWithoutFeedback>
-  );
-};
+const ClickableText = ({ text, onPress }) => (
+  <TouchableOpacity style={styles.button} activeOpacity={constants.activeOpacity} onPress={onPress}>
+    <Text style={styles.text}>{text}</Text>
+  </TouchableOpacity>
+);
 
 const styles = StyleSheet.create({
-  clicked: { ...textStyles.clickableText, opacity: 0.3 },
-  unclicked: textStyles.clickableText
+  button: viewStyles.clickableTextContainer,
+  text: textStyles.categoriesHeader
 });
 
 export default ClickableText;
