@@ -60,3 +60,4 @@ buck-out/
 
 # Environment files
 .env
+.expo

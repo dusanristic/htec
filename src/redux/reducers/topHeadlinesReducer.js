@@ -11,23 +11,22 @@ export default function TopHeadlinesReducer(state = initialState.topHeadlines, a
     case actions.GET_TOP_HEADLINES_SUCCESS: {
       const totalNumberOfArticles = action.payload.data.totalResults;
       const articles = Mappers.mapToTopHeadlines(action.payload.data.articles);
-      const totalFetched = state.config.perPage;
-
+      const totalFetched = state.params.perPage;
       return {
         data: articles,
         total: totalNumberOfArticles,
         totalFetched,
         error: null,
         isFetching: false,
-        config: { ...state.config, pageToFetch: 2 }
+        params: { ...state.params, pageToFetch: 2 }
       };
     }
 
     case actions.GET_MORE_TOP_HEADLINES_SUCCESS: {
       const totalNumberOfArticles = action.payload.data.totalResults;
       const articles = Mappers.mapToTopHeadlines(action.payload.data.articles);
-      const currentPage = state.config.pageToFetch;
-      const totalFetched = state.totalFetched + state.config.perPage;
+      const currentPage = state.params.pageToFetch;
+      const totalFetched = state.totalFetched + state.params.perPage;
       const data = [...state.data, ...articles];
 
       return {
@@ -36,8 +35,13 @@ export default function TopHeadlinesReducer(state = initialState.topHeadlines, a
         totalFetched,
         error: null,
         isFetching: false,
-        config: { ...state.config, pageToFetch: currentPage + 1 }
+        params: { ...state.params, pageToFetch: currentPage + 1 }
       };
+    }
+
+    case actions.SELECT_LANGUAGE: {
+      const { language } = action;
+      return { ...state, params: { ...state.params, language: language.iso } };
     }
 
     case actions.GET_TOP_HEADLINES_FAIL:

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { SectionList } from 'react-native';
 import { HeadlineCategoriesHeader } from '_components/headers';
 import HeadlineCategoryList from './HeadlineCategoriesList';

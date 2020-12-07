@@ -1,6 +1,7 @@
-import { categories } from '_data';
+import { categories, languages } from '_data';
 
 const topHeadlinesPerPage = 10;
+const topCategoryHeadlinesPerPage = 5;
 
 const headlineCategoriesInitState = () =>
   Object.values(
@@ -20,22 +21,40 @@ const headlineCategoriesInitState = () =>
     }, {})
   );
 
+const languagesInitState = Object.values(languages);
+
 export default {
+  languages: {
+    selectedLanguage: languagesInitState[0],
+    all: languagesInitState
+  },
   topHeadlines: {
     total: null,
     totalFetched: null,
     data: [],
     error: null,
     isFetching: false,
-    config: {
+    params: {
       pageToFetch: 1,
-      perPage: topHeadlinesPerPage
+      perPage: topHeadlinesPerPage,
+      language: languagesInitState[0].iso
     }
   },
-  headlineCategories: { data: headlineCategoriesInitState(), error: null },
+  headlineCategories: {
+    data: headlineCategoriesInitState(),
+    error: null,
+    params: {
+      pageToFetch: 1,
+      perPage: topCategoryHeadlinesPerPage,
+      language: languagesInitState[0].iso
+    }
+  },
   searchedHeadlines: {
     data: [],
     error: null,
-    isFetching: false
+    isFetching: false,
+    params: {
+      language: languagesInitState[0].iso
+    }
   }
 };

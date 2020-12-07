@@ -1,6 +1,4 @@
-const articlesPerPage = 5;
-
-export function load(category) {
+export function load(category, params) {
   return {
     type: `GET_${category.toUpperCase()}_HEADLINES`,
     payload: {
@@ -8,8 +6,8 @@ export function load(category) {
         url: '/top-headlines',
         method: 'GET',
         params: {
-          country: 'gb',
-          pageSize: articlesPerPage,
+          country: params.language,
+          pageSize: params.perPare,
           category: category.toLowerCase()
         }
       }

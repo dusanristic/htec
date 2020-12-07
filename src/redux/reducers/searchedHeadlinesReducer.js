@@ -13,6 +13,11 @@ export default function SearchedHeadlinesReducer(state = initialState.searchedHe
     case actions.SEARCH_TOP_HEADLINES_FAIL:
       return state;
 
+    case actions.SELECT_LANGUAGE: {
+      const { language } = action;
+      return { ...state, params: { ...state.params, language: language.iso } };
+    }
+
     default:
       return state;
   }

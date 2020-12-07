@@ -82,6 +82,12 @@ const textStyles = {
     fontSize: Font.FONT_SIZE_18,
     fontWeight: Font.FONT_WEIGHT_500,
     paddingHorizontal: 16
+  },
+
+  languagesCell: {
+    textAlign: 'center',
+    fontWeight: Font.FONT_WEIGHT_600,
+    fontSize: Font.FONT_SIZE_20
   }
 };
 

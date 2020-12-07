@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { SafeAreaView, StyleSheet } from 'react-native';
 import { Lists, Core } from '_components';
-import { topHeadlinesActions } from '_redux/actions';
+import { topHeadlinesActions, languagesSelectionActions } from '_redux/actions';
 import Routes from '_navigations/Routes';
 import { viewStyles } from '_styles';
 
@@ -13,12 +13,29 @@ const TopHeadlinesScreen = ({
   getHeadlines,
   getMoreHeadlines,
   shouldGetMore,
-  fetchConfig,
-  isFetching
+  params,
+  isFetching,
+  languages,
+  selectLanguage,
+  selectedLanguage
 }) => {
   useEffect(() => {
-    getHeadlines(fetchConfig);
-  }, []);
+    getHeadlines(params);
+  }, [selectedLanguage]);
+
+  const refreshData = () => {
+    getHeadlines(params);
+  };
+
+  const getMoreArticles = () => {
+    if (shouldGetMore) {
+      getMoreHeadlines(params);
+    }
+  };
+
+  const onLanguageSelected = (item) => {
+    selectLanguage(item);
+  };
 
   const navigateToContentScreen = (index) => {
     navigation.navigate(Routes.HeadlineContent, {
@@ -26,18 +43,13 @@ const TopHeadlinesScreen = ({
     });
   };
 
-  const getMoreArticles = () => {
-    if (shouldGetMore) {
-      getMoreHeadlines(fetchConfig);
-    }
-  };
-
-  const refreshData = () => {
-    getHeadlines(fetchConfig);
-  };
-
   return (
     <SafeAreaView style={styles.flex}>
+      <Lists.Languages
+        data={languages}
+        onPress={onLanguageSelected}
+        selectedLanguage={selectedLanguage}
+      />
       <Lists.TopHeadlines
         data={headlines}
         onPress={navigateToContentScreen}
@@ -57,14 +69,17 @@ const styles = StyleSheet.create({
 const mapStateToProps = (state) => ({
   headlines: state.topHeadlines.data,
   shouldGetMore: state.topHeadlines.totalFetched < state.topHeadlines.total,
-  fetchConfig: state.topHeadlines.config,
+  params: state.topHeadlines.params,
   error: state.topHeadlines.error,
-  isFetching: state.topHeadlines.isFetching
+  isFetching: state.topHeadlines.isFetching,
+  languages: state.languages.all,
+  selectedLanguage: state.languages.selectedLanguage
 });
 
 const mapDispatchToProps = {
   getHeadlines: topHeadlinesActions.get,
-  getMoreHeadlines: topHeadlinesActions.getMore
+  getMoreHeadlines: topHeadlinesActions.getMore,
+  selectLanguage: languagesSelectionActions.select
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(TopHeadlinesScreen);

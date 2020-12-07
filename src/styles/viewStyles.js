@@ -96,6 +96,13 @@ const viewStyles = {
     justifyContent: 'center',
     alignItems: 'center',
     marginHorizontal: 32
+  },
+
+  languagesCell: {
+    borderWidth: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+    padding: 8
   }
 };
 

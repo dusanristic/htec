@@ -1,6 +1,6 @@
 import * as actions from './actionTypes';
 
-export function get(config) {
+export function get(params) {
   return {
     type: actions.GET_TOP_HEADLINES,
     payload: {
@@ -8,16 +8,16 @@ export function get(config) {
         url: '/top-headlines',
         method: 'GET',
         params: {
-          country: 'gb',
+          country: params.language,
           page: 1,
-          pageSize: config.perPage
+          pageSize: params.perPage
         }
       }
     }
   };
 }
 
-export function getMore(config) {
+export function getMore(params) {
   return {
     type: actions.GET_MORE_TOP_HEADLINES,
     payload: {
@@ -25,9 +25,9 @@ export function getMore(config) {
         url: '/top-headlines',
         method: 'GET',
         params: {
-          country: 'gb',
-          page: config.pageToFetch,
-          pageSize: config.perPage
+          country: params.language,
+          page: params.pageToFetch,
+          pageSize: params.perPage
         }
       }
     }

@@ -5,7 +5,7 @@ import * as actions from './actionTypes';
  * As there are no endpoint for fetching all topheadlines, we are mimicing
  * that by fetching maximum allowed articles per one page, which is 100.
  */
-export function search(text) {
+export function search(text, params) {
   return {
     type: actions.SEARCH_TOP_HEADLINES,
     payload: {
@@ -13,7 +13,7 @@ export function search(text) {
         url: '/top-headlines',
         method: 'GET',
         params: {
-          country: 'gb',
+          country: params.language,
           page: 1,
           pageSize: 100,
           q: text

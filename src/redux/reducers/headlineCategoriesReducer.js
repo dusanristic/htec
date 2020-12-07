@@ -46,6 +46,12 @@ export default function HeadlineCategoriesReducer(state = initialState.headlineC
         ...state,
         error: action.error.message
       };
+
+    case actions.SELECT_LANGUAGE: {
+      const { language } = action;
+      return { ...state, params: { ...state.params, language: language.iso } };
+    }
+
     default:
       return state;
   }
