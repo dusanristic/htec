@@ -38,7 +38,7 @@ const HeadlineContentScreen = ({ route }) => {
 };
 
 const styles = StyleSheet.create({
-  container: { flex: 1 },
+  container: viewStyles.flex,
   scrollViewConter: { flexGrow: 1 },
   title: textStyles.contentTitle,
   infoContainer: viewStyles.rowSpaceBetweenContainer,

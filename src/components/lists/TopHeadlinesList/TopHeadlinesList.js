@@ -21,6 +21,12 @@ const TopHeadlinesList = ({ data, onPress, onEndReached, onRefresh, isFetching }
   />
 );
 
+TopHeadlinesList.defaultProps = {
+  onEndReached: () => {},
+  onRefresh: () => {},
+  isFetching: false
+};
+
 const styles = StyleSheet.create({
   listContainer: { marginHorizontal: 32 },
   separator: viewStyles.topHeadlineslistSeparator

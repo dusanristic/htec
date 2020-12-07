@@ -1,9 +1,10 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
-import { SafeAreaView } from 'react-native';
+import { SafeAreaView, StyleSheet } from 'react-native';
 import { Lists, Core } from '_components';
 import { topHeadlinesActions } from '_redux/actions';
 import Routes from '_navigations/Routes';
+import { viewStyles } from '_styles';
 
 const TopHeadlinesScreen = ({
   navigation,
@@ -36,7 +37,7 @@ const TopHeadlinesScreen = ({
   };
 
   return (
-    <SafeAreaView style={{ flex: 1 }}>
+    <SafeAreaView style={styles.flex}>
       <Lists.TopHeadlines
         data={headlines}
         onPress={navigateToContentScreen}
@@ -48,6 +49,10 @@ const TopHeadlinesScreen = ({
     </SafeAreaView>
   );
 };
+
+const styles = StyleSheet.create({
+  flex: viewStyles.flex
+});
 
 const mapStateToProps = (state) => ({
   headlines: state.topHeadlines.data,

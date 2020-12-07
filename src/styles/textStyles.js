@@ -75,6 +75,13 @@ const textStyles = {
   categoryCellDescription: {
     fontSize: Font.FONT_SIZE_14,
     paddingHorizontal: 16
+  },
+
+  noSearchedHeadlines: {
+    textAlign: 'center',
+    fontSize: Font.FONT_SIZE_18,
+    fontWeight: Font.FONT_WEIGHT_500,
+    paddingHorizontal: 16
   }
 };
 

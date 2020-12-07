@@ -4,6 +4,7 @@ import { persistReducer } from 'redux-persist';
 import autoMergeLevel2 from 'redux-persist/lib/stateReconciler/autoMergeLevel2';
 import topHeadlinesReducer from './topHeadlinesReducer';
 import headlineCategoriesReducer from './headlineCategoriesReducer';
+import searchedHeadlinesReducer from './searchedHeadlinesReducer';
 
 const topHeadlinesPersistConfig = {
   key: 'TopHeadlines',
@@ -12,16 +13,24 @@ const topHeadlinesPersistConfig = {
   blacklist: ['error']
 };
 
-// const headlineCategoriesPersistConfig = {
-//   key: 'HeadlineCategories',
-//   storage: AsyncStorage,
-//   stateReconciler: autoMergeLevel2,
-//   blacklist: ['error']
-// };
+const headlineCategoriesPersistConfig = {
+  key: 'HeadlineCategories',
+  storage: AsyncStorage,
+  stateReconciler: autoMergeLevel2,
+  blacklist: ['error']
+};
+
+const searchedHeadlinesPersisConfig = {
+  key: 'SearchedHeadlines',
+  storage: AsyncStorage,
+  stateReconciler: autoMergeLevel2,
+  blacklist: ['error']
+};
 
 const rootReducer = combineReducers({
   topHeadlines: persistReducer(topHeadlinesPersistConfig, topHeadlinesReducer),
-  headlineCategories: headlineCategoriesReducer
+  headlineCategories: persistReducer(headlineCategoriesPersistConfig, headlineCategoriesReducer),
+  searchedHeadlines: persistReducer(searchedHeadlinesPersisConfig, searchedHeadlinesReducer)
 });
 
 export default rootReducer;

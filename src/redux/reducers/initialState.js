@@ -32,5 +32,10 @@ export default {
       perPage: topHeadlinesPerPage
     }
   },
-  headlineCategories: { data: headlineCategoriesInitState(), error: null }
+  headlineCategories: { data: headlineCategoriesInitState(), error: null },
+  searchedHeadlines: {
+    data: [],
+    error: null,
+    isFetching: false
+  }
 };

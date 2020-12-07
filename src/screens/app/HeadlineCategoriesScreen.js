@@ -1,9 +1,10 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { SafeAreaView } from 'react-native';
+import { SafeAreaView, StyleSheet } from 'react-native';
 import { Lists, Core } from '_components';
 import Routes from '_navigations/Routes';
 import { headlineCategoriesActions } from '_redux/actions';
+import { viewStyles } from '_styles';
 
 function HeadlineCategoriesScreen({
   navigation,
@@ -19,7 +20,7 @@ function HeadlineCategoriesScreen({
   };
 
   return (
-    <SafeAreaView style={{ flex: 1 }}>
+    <SafeAreaView style={styles.flex}>
       <Lists.HeadlineCategories
         data={headlinesByCategory}
         onPress={navigateToContentScreen}
@@ -30,6 +31,10 @@ function HeadlineCategoriesScreen({
     </SafeAreaView>
   );
 }
+
+const styles = StyleSheet.create({
+  flex: viewStyles.flex
+});
 
 const mapStateToProps = (state) => ({
   headlinesByCategory: state.headlineCategories.data,

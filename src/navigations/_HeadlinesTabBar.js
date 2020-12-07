@@ -24,6 +24,13 @@ function AppNavigatorTabBar() {
           title: i18n.translate('headlineCategories')
         }}
       />
+      <Tab.Screen
+        name={Routes.SearchHeadlines}
+        component={AppScreens.SearchHeadlines}
+        options={{
+          title: i18n.translate('searchHeadlines')
+        }}
+      />
     </Tab.Navigator>
   );
 }
