@@ -24,6 +24,7 @@
     "no-use-before-define": ["error", { "functions": true, "classes": true, "variables": false }],
     "quotes": [2, "single", "avoid-escape"],
     "import/prefer-default-export": "off",
+    "operator-linebreak": "off",
     "no-nested-ternary": "off",
     "object-curly-newline": "off",
     "no-param-reassign": "off",

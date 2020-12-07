@@ -43,7 +43,6 @@ const HeadlineCategoriesSection = ({ data, onPress, onSectionPress }) => {
       showsVerticalScrollIndicator={false}
       sections={data}
       keyExtractor={(item, index) => item + index}
-      // extraData={shouldExpand}
       renderItem={renderItem}
       renderSectionHeader={renderSectionHeader}
     />

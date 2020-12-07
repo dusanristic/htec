@@ -1,5 +1,7 @@
 import { categories } from '_data';
 
+const topHeadlinesPerPage = 10;
+
 const headlineCategoriesInitState = () =>
   Object.values(
     categories.reduce((acc, item, index) => {
@@ -20,9 +22,15 @@ const headlineCategoriesInitState = () =>
 
 export default {
   topHeadlines: {
-    totalResults: null,
+    total: null,
+    totalFetched: null,
     data: [],
-    error: null
+    error: null,
+    isFetching: false,
+    config: {
+      pageToFetch: 1,
+      perPage: topHeadlinesPerPage
+    }
   },
   headlineCategories: { data: headlineCategoriesInitState(), error: null }
 };
