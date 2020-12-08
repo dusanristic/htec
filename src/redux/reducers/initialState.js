@@ -6,8 +6,8 @@ const topCategoryHeadlinesPerPage = 5;
 const headlineCategoriesInitState = () =>
   Object.values(
     categories.reduce((acc, item, index) => {
-      acc[item] = {
-        header: { title: item, id: index },
+      acc[item.title] = {
+        header: { title: item.title, category: item.category, id: index },
         /**
          * Data is two dimensional array because
          * we are showing data in FlatList which is inside SectionList.

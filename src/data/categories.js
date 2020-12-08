@@ -1,21 +1,16 @@
 /**
- * Constants below have multiple purposes:
- * 1. Title of section headers on HeadlineCategories screen,
- * 2. They are used as params for specifying by what category we want to fetch headlines,
- * 3. Defining action type for Redux.
- * Even though it may seem like this is not in the frames of the clean code, all things above
- * are tightly coupled, and it will greatly remove duplication of code.
- * Titles can be easily changed (check file initialState.js in Redux folder),
- * and there is no need to name actions different than category params.
- * Due to all reasons from above, we did implementation in this way.
+ * Property `category` defines param value by which specific category is fetched from backend.
+ * Action defined in Redux for fetching specific category must be defined as follow:
+ * `GET_${category}_HEADLINES`
+ * This way, duplication of code is avoided (check implementation of related reducer).
  */
-const BUSINESS = 'BUSINESS';
-const ENTERTAINMENT = 'ENTERTAINMENT';
-const GENERAL = 'GENERAL';
-const HEALTH = 'HEALTH';
-const SCIENCE = 'SCIENCE';
-const SPORTS = 'SPORTS';
-const TECHNOLOGY = 'TECHNOLOGY';
+const BUSINESS = { title: 'BUSINESS', category: 'business' };
+const ENTERTAINMENT = { title: 'ENTERTAINMENT', category: 'entertainment' };
+const GENERAL = { title: 'GENERAL', category: 'general' };
+const HEALTH = { title: 'HEALTH', category: 'health' };
+const SCIENCE = { title: 'SCIENCE', category: 'science' };
+const SPORTS = { title: 'SPORTS', category: 'sports' };
+const TECHNOLOGY = { title: 'TECHNOLOGY', category: 'technology' };
 
 /**
  * The order of categories in array below will define how categories will be

@@ -21,11 +21,11 @@ export default function HeadlineCategoriesReducer(state = initialState.headlineC
     case actions.GET_SPORTS_HEADLINES_SUCCESS:
     case actions.GET_TECHNOLOGY_HEADLINES_SUCCESS: {
       const actionType = action.payload.config.reduxSourceAction.type;
-      const sectionHeaderTitle = actionType.split('_')[1];
+      const sectionAction = actionType.split('_')[1];
       const articles = Mappers.mapToTopHeadlines(action.payload.data.articles);
 
       const updatedData = state.data.map((item) => {
-        if (item.header.title === sectionHeaderTitle) {
+        if (item.header.category.toUpperCase() === sectionAction) {
           return { ...item, data: [articles] };
         }
 

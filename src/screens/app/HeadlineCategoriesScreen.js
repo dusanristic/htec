@@ -21,7 +21,7 @@ function HeadlineCategoriesScreen({
 
   useEffect(() => {
     expandedSectionsIndices.forEach((index) => {
-      getHeadlinesByCategory(categories[index], params);
+      getHeadlinesByCategory(categories[index].category, params);
     });
   }, [selectedLanguage]);
 
@@ -46,7 +46,7 @@ function HeadlineCategoriesScreen({
       <Lists.HeadlineCategories
         data={headlinesByCategory}
         onPress={navigateToContentScreen}
-        onSectionPress={(header) => getHeadlinesByCategory(header.title, params)}
+        onSectionPress={(header) => getHeadlinesByCategory(header.category, params)}
         onSectionExpanded={setExpandedSectionsIndices}
       />
 

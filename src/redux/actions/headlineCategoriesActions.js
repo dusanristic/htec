@@ -8,7 +8,7 @@ export function load(category, params) {
         params: {
           country: params.language,
           pageSize: params.perPare,
-          category: category.toLowerCase()
+          category
         }
       }
     }
