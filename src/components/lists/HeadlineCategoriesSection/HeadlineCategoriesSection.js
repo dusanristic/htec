@@ -3,8 +3,13 @@ import { SectionList } from 'react-native';
 import { HeadlineCategoriesHeader } from '_components/headers';
 import HeadlineCategoryList from './HeadlineCategoriesList';
 
-const HeadlineCategoriesSection = ({ data, onPress, onSectionPress }) => {
+const HeadlineCategoriesSection = ({ data, onPress, onSectionPress, onSectionExpanded }) => {
   const [expandedLists, setExpandedLists] = useState(new Array(data.length));
+
+  useEffect(() => {
+    const expandedSectionsIndices = expandedLists.flatMap((bool, index) => (bool ? index : []));
+    onSectionExpanded(expandedSectionsIndices);
+  }, [expandedLists]);
 
   const renderItem = ({ item, section }) => (
     <HeadlineCategoryList

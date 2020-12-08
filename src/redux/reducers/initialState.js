@@ -43,6 +43,7 @@ export default {
   headlineCategories: {
     data: headlineCategoriesInitState(),
     error: null,
+    categories,
     params: {
       pageToFetch: 1,
       perPage: topCategoryHeadlinesPerPage,

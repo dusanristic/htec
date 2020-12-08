@@ -12,10 +12,19 @@ function HeadlineCategoriesScreen({
   getHeadlinesByCategory,
   error,
   params,
+  categories,
   languages,
   selectLanguage,
   selectedLanguage
 }) {
+  const [expandedSectionsIndices, setExpandedSectionsIndices] = useState([]);
+
+  useEffect(() => {
+    expandedSectionsIndices.forEach((index) => {
+      getHeadlinesByCategory(categories[index], params);
+    });
+  }, [selectedLanguage]);
+
   const onLanguageSelected = (item) => {
     selectLanguage(item);
   };
@@ -38,7 +47,7 @@ function HeadlineCategoriesScreen({
         data={headlinesByCategory}
         onPress={navigateToContentScreen}
         onSectionPress={(header) => getHeadlinesByCategory(header.title, params)}
-        // reset={}
+        onSectionExpanded={setExpandedSectionsIndices}
       />
 
       {error && <Core.ErrorView />}
@@ -54,6 +63,7 @@ const mapStateToProps = (state) => ({
   headlinesByCategory: state.headlineCategories.data,
   error: state.headlineCategories.error,
   params: state.headlineCategories.params,
+  categories: state.headlineCategories.categories,
   languages: state.languages.all,
   selectedLanguage: state.languages.selectedLanguage
 });
