@@ -32,6 +32,6 @@ const store = createStore(
 const persistor = persistStore(store);
 
 // Use this to reset ReduxPersist store
-persistor.purge();
+// persistor.purge();
 
 export { store, persistor };
